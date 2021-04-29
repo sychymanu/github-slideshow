@@ -1,0 +1,16 @@
+version: 2
+registries:
+  rubygems-server-gem-kangaroocare-com:
+    type: rubygems-server
+    url: https://gem.kangaroocare.com
+    token: "${{secrets.RUBYGEMS_SERVER_GEM_KANGAROOCARE_COM_TOKEN}}"
+
+updates:
+- package-ecosystem: bundler
+  directory: "/Monitored dependency files"
+  schedule:
+    interval: daily
+    timezone: Asia/Calcutta
+  open-pull-requests-limit: 10
+  registries:
+  - rubygems-server-gem-kangaroocare-com
